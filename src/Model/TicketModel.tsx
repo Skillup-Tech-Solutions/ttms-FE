@@ -47,6 +47,9 @@ const TicketModal = ({ open, onClose, userData }: TicketModalProps) => {
   const [otpExpiryTime, setOtpExpiryTime] = useState<Date | null>(null);
   const [timeLeft, setTimeLeft] = useState(0);
   const { user } = useUser();
+ const  VITE_EMAILJS_SERVICE_ID="service_pwy26kq"
+const VITE_EMAILJS_TEMPLATE_ID="template_bmjzjpn"
+const VITE_EMAILJS_PUBLIC_KEY="SIXoaF7pKYonhKbfr"
 
   useEffect(() => {
     if (!otpExpiryTime) return;
@@ -134,13 +137,13 @@ const TicketModal = ({ open, onClose, userData }: TicketModalProps) => {
 
    try {
      await emailjs.send(
-       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+       VITE_EMAILJS_SERVICE_ID,
+       VITE_EMAILJS_TEMPLATE_ID,
        {
          email: userData?.email,
          passcode: "1234",
        },
-       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+       VITE_EMAILJS_PUBLIC_KEY
      );
 
      showSuccess("OTP sent successfully!");
