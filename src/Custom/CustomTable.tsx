@@ -55,7 +55,7 @@ export default function CustomNew({
   exportBoolean,
 }: CustomTableProps) {
   const [page, setPage] = useState(0);
-  const rowsPerPage = 5;
+  const rowsPerPage = 20;
   const [selected, setSelected] = useState<number[]>([]);
   const [orderBy, setOrderBy] = useState<string>("");
   const [order, setOrder] = useState<"asc" | "desc">("asc");
