@@ -69,7 +69,7 @@ export default function CustomNew({
     columns.map((c) => c.id)
   );
 
-  // Keep visible columns in sync when `columns` prop changes
+  // Keep visible columns in sync when `columns` prop changes 
   useEffect(() => {
     setVisibleColumnIds(columns.map((c) => c.id));
   }, [columns]);
